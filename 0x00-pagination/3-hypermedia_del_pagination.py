@@ -63,7 +63,7 @@ class Server:
                 if j in self.__indexed_dataset:
                     count += 1
                     data.append(self.__indexed_dataset[j])
-                if count == 2:
+                if count == page_size:
                     next_index = j + 1
                     break
                 j += 1
