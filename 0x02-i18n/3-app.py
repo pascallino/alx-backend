@@ -26,7 +26,7 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """_summary_
 
     Returns:
