@@ -111,7 +111,7 @@ def index() -> str:
     """
     Handles / route
     """
-    return render_template('5-index.html')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
