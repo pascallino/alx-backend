@@ -2,7 +2,6 @@
 """
 Flask app
 """
-import locale
 from flask import (
     Flask,
     render_template,
@@ -11,7 +10,6 @@ from flask import (
 )
 from flask_babel import Babel
 from datetime import timezone as tmzn
-from datetime import datetime
 from pytz import timezone
 import pytz.exceptions
 from typing import (
@@ -60,11 +58,6 @@ def before_request():
     """
     user = get_user()
     g.user = user
-    time_now = pytz.utc.localize(datetime.utcnow())
-    time = time_now.astimezone(timezone(get_timezone()))
-    locale.setlocale(locale.LC_TIME, (get_locale(), 'UTF-8'))
-    fmt = "%b %d, %Y %I:%M:%S %p"
-    g.time = time.strftime(fmt)
 
 
 @babel.localeselector
